@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form>
+    {% if blog_list|length == 0 %}
+        No Blogs yet...
+    {% else %}
+        Printout the Blog list
+    {% endif %}
+</form>
+
+{% endblock content %}
+
