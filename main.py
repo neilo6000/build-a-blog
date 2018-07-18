@@ -18,15 +18,22 @@ class Blog(db.Model):
         self.title = title
         self.body = body
 
-# @app.route("/",methods=["POST"])
-@app.route("/")
+# Main 'home' page for Blogs...
+@app.route("/blog")
 def index():
     # Create list of Blogs to be displayed on main page.
     blog_list = Blog.query.all()
-
-    print(blog_list)
-
     return render_template('blog.html', blog_list=blog_list)
+
+# Input screen for a new Blog post...
+@app.route("/newpost")
+def newpost():
+    return render_template('newpost.html')
+
+# Process new Blog post...
+@app.route("/newblog", method="POST")
+def newblog():
+    return None
 
 if __name__ == '__main__':
     app.run()

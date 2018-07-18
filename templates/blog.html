@@ -1,13 +1,19 @@
 {% extends "base.html" %}
 
 {% block content %}
-<form>
+    <h1>Build a Blog Post</h1>
     {% if blog_list|length == 0 %}
+    <form>
         No Blogs yet...
+    </form>
     {% else %}
-        Printout the Blog list
+        { % for blog in blog_list %}
+        <li>{{ blog.title }}
+            {{ blog.body }}
+        </li>
+        { % endfor % }
+        Show the Blogs!!!
     {% endif %}
-</form>
 
 {% endblock content %}
 
