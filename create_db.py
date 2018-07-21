@@ -10,9 +10,7 @@ db = SQLAlchemy(app)
 
 class Blog(db.Model):
  
-    # id = db.Column(db.Integer, autoincrement=true, primary_key=True)
-    # id = db.Column(db.Integer, primary_key=True)
-    id = db.Column(db.serial, primary_key=True)
+    id = db.Column(db.integer, primary_key=True)
     title = db.Column(db.String(30))
     body = db.Column(db.String(250))
  

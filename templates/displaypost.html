@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <form action="/displaypost">
+        <br/>
+        <h1>
+            {{ new_blog_title }}
+        </h1>
+        <br/>
+        <br/>
+        {{ new_blog_entry }}
+    </form>
+{% endblock content %}

@@ -22,7 +22,6 @@ class Blog(db.Model):
 def index():
     # Create list of Blogs to be displayed on main page.
     blog_list = Blog.query.all()
-    print("Blog list=", blog_list)
     return render_template('blog.html', blog_list=blog_list)
 
 # Input screen for a new Blog post...
@@ -38,6 +37,7 @@ def newpost():
         db.session.add(blog)
         db.session.commit()
 
+        return render_template('displaypost.html', new_blog_title=new_blog_title, new_blog_entry=new_blog_entry)
     return render_template('newpost.html')
 
 # Process new Blog post...
@@ -47,4 +47,3 @@ def newblog():
 
 if __name__ == '__main__':
     app.run()
-
